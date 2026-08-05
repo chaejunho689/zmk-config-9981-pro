@@ -94,19 +94,19 @@
         win_tab: win_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp TAB>, <&macro_release &kp LGUI>;
+            bindings = <&macro_press &kp LGUI &macro_tap &kp TAB &macro_release &kp LGUI>;
         };
 
         alt_f4: alt_f4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp F4>, <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp F4 &macro_release &kp LALT>;
         };
 
         win_enter: win_enter {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp ENTER>, <&macro_release &kp LGUI>;
+            bindings = <&macro_press &kp LGUI &macro_tap &kp ENTER &macro_release &kp LGUI>;
         };
     };
 
@@ -116,7 +116,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <450>;
-            bindings = <&kp TAB>, <&win_tab>;
+            bindings = <&kp TAB &win_tab>;
         };
 
         esc_hold_alt_f4: esc_hold_alt_f4 {
@@ -124,7 +124,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <450>;
-            bindings = <&alt_f4>, <&kp ESC>;
+            bindings = <&alt_f4 &kp ESC>;
         };
     };
 
@@ -200,4 +200,3 @@
         };
     };
 };
-
