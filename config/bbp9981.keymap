@@ -81,6 +81,16 @@
     };
 
     behaviors {
+    sym_lang1: behavior_sym_lang1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <450>;
+        bindings = <&mo &kp>;           /* hold=Layer 1, tap=LANG1 */
+        };
+    };
+
+    behaviors {
     sk_kp: behavior_sk_kp {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
@@ -130,7 +140,7 @@
     &kp Q        &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A        &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
     &kp LSHFT    &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &kp M            &tdc_to_SYM      &kp ENTER
-    &sk_kp LCTRL  LCTRL     &sk LALT                            &kp SPACE                          &lt SYM LANG1                     &sl_mo 2 2
+    &sk_kp LCTRL  LCTRL     &sk LALT                            &kp SPACE                          &sym_lang1 SYM LANG1              &sl_mo 2 2
             >;
         };
 
